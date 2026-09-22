@@ -3,795 +3,2065 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beauty Time - Salon lepote u centru Beograda | Kosovska 1</title>
-<meta name="description" content="Beauty Time - manikir, pedikir, spa, brow tretmani, frizerski saloni i tretmani u 4-6 ruku. Kosovska 1, Beograd. Otvoreno svaki dan 09-20h.">
+<title>Beauty Time - manikir, obrve i kosa u centru Beograda | Kosovska 1</title>
+<meta name="description" content="Beauty Time, beauty bar u centru Beograda. Manikir, pedikir, obrve i trepavice, frizer i masaža, uz tretmane u 4 i 6 ruku. Kosovska 1, lokal 6, svaki dan 09:00 - 20:00.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --accent:#af0064;
-    --accent-dark:#7d0048;
-    --accent-darker:#57002f;
-    --accent-soft:#f7e3ee;
-    --accent-soft-2:#fbf0f6;
-    --accent-glow:rgba(175,0,100,0.14);
-    --text:rgba(20,16,18,0.94);
-    --text-muted:rgba(20,16,18,0.66);
-    --text-faint:rgba(20,16,18,0.42);
-    --radius-btn:4px;
-    --radius-card:20px;
-    --container:1280px;
-  }
+/* ============================================================
+   1. TOKENI
+   ============================================================ */
+:root{
+  --accent:#af0064;
+  --accent-deep:#7a0046;
+  --accent-darker:#4e002c;
+  --accent-soft:#f7e3ee;
+  --accent-tint:#fcf3f7;
+  --accent-glow:rgba(175,0,100,.16);
 
-  *{margin:0;padding:0;box-sizing:border-box;}
+  --ink:#1c0a13;
+  --text:rgba(28,10,19,.92);
+  --text-muted:rgba(28,10,19,.62);
+  --text-faint:rgba(28,10,19,.44);
 
-  html{scroll-behavior:smooth;}
+  --bg:#fffcfd;
+  --bg-warm:#fbf4f7;
+  --line:rgba(28,10,19,.10);
+  --line-soft:rgba(28,10,19,.06);
 
-  body{
-    font-family:'Montserrat', sans-serif;
-    color:var(--text);
-    background:#fffdfc;
-    font-weight:400;
-    line-height:1.65;
-    overflow-x:hidden;
-  }
+  --r-btn:999px;
+  --r-card:24px;
+  --r-pill:999px;
+  --container:1280px;
 
-  h1,h2,h3,h4{
-    font-family:'Playfair Display', serif;
-    color:var(--text);
-    line-height:1.2;
-    font-weight:600;
-  }
+  --sec-pad:120px;
+  --header-h:80px;
+}
 
-  a{color:inherit;text-decoration:none;}
-  img{display:block;max-width:100%;}
-  ul{list-style:none;}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-  .wrap{
-    max-width:var(--container);
-    margin:0 auto;
-    padding-left:24px;
-    padding-right:24px;
-  }
+html{scroll-behavior:smooth;}
 
-  section{
-    padding-top:96px;
-    padding-bottom:96px;
-  }
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  font-weight:400;
+  line-height:1.68;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
 
-  .section-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
-    margin-bottom:16px;
-  }
-  .section-tag::before{
-    content:"";
-    width:20px;
-    height:1px;
-    background:var(--accent);
-    display:inline-block;
-  }
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  color:var(--ink);
+  font-weight:500;
+  line-height:1.12;
+  letter-spacing:-0.01em;
+}
 
-  .section-title{
-    font-size:clamp(28px, 3.4vw, 42px);
-    max-width:640px;
-    margin-bottom:16px;
-  }
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+ul,ol{list-style:none;}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
 
-  .section-lead{
-    color:var(--text-muted);
-    max-width:520px;
-    font-size:16px;
-  }
+::selection{background:var(--accent);color:#fff;}
 
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:16px 32px;
-    border-radius:var(--radius-btn);
-    font-family:'Montserrat', sans-serif;
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.02em;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    white-space:nowrap;
-  }
+.wrap{
+  width:100%;
+  max-width:var(--container);
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:24px;
+  padding-right:24px;
+}
 
-  .btn-primary{
-    background:var(--accent);
-    color:#fff;
-    box-shadow:0 8px 24px var(--accent-glow);
-  }
-  .btn-primary:hover{
-    background:var(--accent-dark);
-    transform:translateY(-2px);
-    box-shadow:0 14px 32px var(--accent-glow);
-  }
+.sec{
+  padding-top:var(--sec-pad);
+  padding-bottom:var(--sec-pad);
+  position:relative;
+}
 
-  .btn-outline{
-    background:transparent;
-    color:var(--accent);
-    border:1px solid var(--accent);
-  }
-  .btn-outline:hover{
-    background:var(--accent-soft);
-    transform:translateY(-2px);
-  }
+.sr-only{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;margin:-1px;
+}
 
-  .btn-light{
-    background:#fff;
-    color:var(--accent-dark);
-  }
-  .btn-light:hover{
-    background:var(--accent-soft-2);
-    transform:translateY(-2px);
-  }
+/* ============================================================
+   2. TIPOGRAFIJA
+   ============================================================ */
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+.eyebrow::before{
+  content:"";
+  width:32px;
+  height:1px;
+  background:var(--accent);
+  opacity:.55;
+}
+.eyebrow.on-dark{color:#f0b9d5;}
+.eyebrow.on-dark::before{background:#f0b9d5;}
 
-  /* ---------- HEADER ---------- */
-  header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:#fffdfc;
-    border-bottom:1px solid rgba(175,0,100,0.08);
-    transition:background 0.3s ease, backdrop-filter 0.3s ease;
-  }
-  header.scrolled{
-    background:rgba(255,253,252,0.85);
-    backdrop-filter:blur(12px);
-  }
+.h2{
+  font-size:clamp(32px,4.4vw,56px);
+  max-width:16ch;
+}
+.h2 em{
+  font-style:italic;
+  color:var(--accent);
+  white-space:nowrap;
+}
+.lead{
+  font-size:20px;
+  color:var(--text-muted);
+  max-width:62ch;
+  margin-top:20px;
+  font-weight:300;
+}
+p{max-width:64ch;}
 
-  .nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding-top:18px;
-    padding-bottom:18px;
-  }
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:48px;
+  margin-bottom:64px;
+}
+.sec-head .lead{margin-top:0;max-width:44ch;padding-bottom:8px;}
 
-  .logo img{
-    height:36px;
-    width:auto;
-  }
+/* ============================================================
+   3. DUGMAD
+   ============================================================ */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding-top:16px;
+  padding-bottom:16px;
+  padding-left:32px;
+  padding-right:32px;
+  border-radius:var(--r-btn);
+  border:1px solid transparent;
+  font-size:16px;
+  font-weight:600;
+  letter-spacing:.01em;
+  white-space:nowrap;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,background .35s ease,color .35s ease,border-color .35s ease;
+}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none;}
 
-  .nav-links{
-    display:flex;
-    align-items:center;
-    gap:36px;
-  }
-  .nav-links a{
-    font-size:14px;
-    font-weight:500;
-    color:var(--text);
-    transition:color 0.2s ease;
-    position:relative;
-  }
-  .nav-links a:hover{color:var(--accent);}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 12px 32px var(--accent-glow);
+}
+.btn-primary::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:40%;
+  height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:skewX(-18deg);
+  pointer-events:none;
+}
+.btn-primary:hover{
+  background:var(--accent-deep);
+  transform:translateY(-3px);
+  box-shadow:0 20px 44px var(--accent-glow);
+}
+.btn-primary:hover::after{animation:btnSheen .8s ease forwards;}
+@keyframes btnSheen{to{left:120%;}}
 
-  .nav-cta{
-    display:flex;
-    align-items:center;
-    gap:16px;
-  }
+.btn-ghost{
+  border-color:var(--line);
+  color:var(--ink);
+  background:transparent;
+}
+.btn-ghost:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-3px);
+}
 
-  .burger{
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    gap:5px;
-    width:32px;
-    height:32px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    z-index:200;
-  }
-  .burger span{
-    display:block;
-    height:2px;
-    width:100%;
-    background:var(--text);
-    transition:transform 0.3s ease, opacity 0.3s ease;
-  }
-  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .burger.open span:nth-child(2){opacity:0;}
-  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.btn-light{background:#fff;color:var(--accent);}
+.btn-light:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(0,0,0,.24);}
 
-  .mobile-menu{
-    position:fixed;
-    top:0;
-    right:0;
-    width:100%;
-    height:100vh;
-    background:#fffdfc;
-    z-index:150;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:28px;
-    transform:translateX(100%);
-    transition:transform 0.35s ease;
-  }
-  .mobile-menu.open{transform:translateX(0);}
-  .mobile-menu a{
-    font-size:22px;
-    font-family:'Playfair Display', serif;
-    color:var(--text);
-  }
-  .mobile-menu a:hover{color:var(--accent);}
-  .mobile-menu .btn{margin-top:12px;}
+.btn-outline-light{border-color:rgba(255,255,255,.4);color:#fff;}
+.btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-3px);}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding-top:72px;
-    padding-bottom:80px;
-    background:linear-gradient(180deg, var(--accent-soft-2) 0%, #fffdfc 65%);
-  }
-  .hero-inner{
-    display:grid;
-    grid-template-columns:1.05fr 0.95fr;
-    gap:56px;
-    align-items:center;
-  }
-  .hero-copy .section-tag{margin-bottom:20px;}
-  .hero h1{
-    font-size:clamp(38px, 5.4vw, 62px);
-    margin-bottom:22px;
-    max-width:560px;
-  }
-  .hero p.subtitle{
-    font-size:17px;
-    color:var(--text-muted);
-    max-width:460px;
-    margin-bottom:32px;
-  }
-  .hero-media{
-    position:relative;
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    box-shadow:0 30px 60px -20px rgba(87,0,47,0.25);
-  }
-  .hero-media img{
-    width:100%;
-    height:520px;
-    object-fit:cover;
-  }
-  .hero-media::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(180deg, rgba(87,0,47,0) 55%, rgba(87,0,47,0.35) 100%);
-  }
-  .hero-badge{
-    position:absolute;
-    bottom:24px;
-    left:24px;
-    right:24px;
-    z-index:2;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:14px;
-    font-weight:500;
-  }
+.btn-row{display:flex;flex-wrap:wrap;gap:16px;}
 
-  /* ---------- BOL ---------- */
-  .pain{
-    background:#fffdfc;
-    padding-top:64px;
-    padding-bottom:64px;
-    border-top:1px solid rgba(175,0,100,0.08);
-    border-bottom:1px solid rgba(175,0,100,0.08);
-  }
-  .pain-inner{
-    max-width:720px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .pain p{
-    font-family:'Playfair Display', serif;
-    font-size:clamp(20px, 2.4vw, 26px);
-    font-weight:500;
-    color:var(--text);
-    line-height:1.5;
-  }
+/* ============================================================
+   4. TOP TRAKA + HEADER
+   ============================================================ */
+.topbar{
+  background:var(--ink);
+  color:rgba(255,255,255,.72);
+  font-size:12px;
+  letter-spacing:.04em;
+}
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:12px;
+  padding-bottom:12px;
+}
+.topbar-list{display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
+.topbar-list li{display:flex;align-items:center;gap:8px;}
+.topbar svg{width:14px;height:14px;stroke:#e59ec4;fill:none;stroke-width:1.6;flex:none;}
+.topbar a:hover{color:#fff;}
+.topbar-social{display:flex;align-items:center;gap:20px;}
 
-  /* ---------- USLUGE ---------- */
-  .services-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:24px;
-    margin-bottom:56px;
-    flex-wrap:wrap;
-  }
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:28px;
-  }
-  .service-card{
-    background:#fff;
-    border:1px solid rgba(175,0,100,0.1);
-    border-radius:var(--radius-card);
-    padding:36px 30px;
-    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-  .service-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 24px 48px -16px var(--accent-glow);
-    border-color:rgba(175,0,100,0.22);
-  }
-  .service-icon{
-    width:52px;
-    height:52px;
-    border-radius:14px;
-    background:var(--accent-soft);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:22px;
-  }
-  .service-icon svg{width:26px;height:26px;stroke:var(--accent);}
-  .service-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-  }
-  .service-card p{
-    color:var(--text-muted);
-    font-size:14.5px;
-  }
+#site-header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  background:rgba(255,252,253,.92);
+  border-bottom:1px solid transparent;
+  transition:box-shadow .4s ease,border-color .4s ease,background .4s ease;
+}
+#site-header.scrolled{
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--line-soft);
+  box-shadow:0 8px 32px rgba(28,10,19,.06);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  height:var(--header-h);
+}
+.logo img{height:36px;width:auto;}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-links a{
+  font-size:16px;
+  font-weight:500;
+  position:relative;
+  padding-bottom:4px;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:right;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left;}
+.nav-cta{display:flex;align-items:center;gap:16px;}
+.nav-cta .btn{padding-top:12px;padding-bottom:12px;padding-left:24px;padding-right:24px;font-size:16px;}
 
-  .sterilization-strip{
-    margin-top:40px;
-    background:var(--accent-darker);
-    border-radius:var(--radius-card);
-    padding:36px 40px;
-    display:flex;
-    align-items:center;
-    gap:24px;
-    color:#fff;
-  }
-  .sterilization-strip .icon-wrap{
-    width:56px;
-    height:56px;
-    flex-shrink:0;
-    border-radius:14px;
-    background:rgba(255,255,255,0.12);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .sterilization-strip .icon-wrap svg{width:28px;height:28px;stroke:#fff;}
-  .sterilization-strip h4{
-    color:#fff;
-    font-size:19px;
-    margin-bottom:6px;
-  }
-  .sterilization-strip p{
-    color:rgba(255,255,255,0.78);
-    font-size:14.5px;
-    max-width:560px;
-  }
+.burger{
+  display:none;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  position:relative;
+  flex:none;
+}
+.burger span{
+  position:absolute;
+  left:14px;
+  width:20px;
+  height:1.5px;
+  background:var(--ink);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .3s ease;
+}
+.burger span:nth-child(1){top:18px;}
+.burger span:nth-child(2){top:23px;}
+.burger span:nth-child(3){top:28px;}
+.burger.open span:nth-child(1){transform:translateY(5px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-5px) rotate(-45deg);}
 
-  /* ---------- O BRENDU ---------- */
-  .about{
-    background:var(--accent-soft-2);
-  }
-  .about-inner{
-    display:grid;
-    grid-template-columns:0.85fr 1.15fr;
-    gap:60px;
-    align-items:center;
-  }
-  .about-media{
-    background:#e9d6e1;
-    border-radius:var(--radius-card);
-    height:460px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--accent-dark);
-    font-weight:600;
-    font-size:14px;
-    text-align:center;
-    padding-left:20px;
-    padding-right:20px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-  }
-  .about-copy p{
-    color:var(--text-muted);
-    margin-bottom:18px;
-    max-width:500px;
-  }
-  .about-points{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:20px;
-    margin-top:32px;
-  }
-  .about-point{
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-  }
-  .about-point svg{
-    width:20px;
-    height:20px;
-    stroke:var(--accent);
-    flex-shrink:0;
-    margin-top:2px;
-  }
-  .about-point span{
-    font-size:14px;
-    color:var(--text);
-    font-weight:500;
-  }
+.mobile-menu{
+  position:fixed;
+  top:calc(var(--header-h) + 40px);
+  left:0;
+  right:0;
+  bottom:0;
+  background:var(--bg);
+  z-index:70;
+  padding-top:32px;
+  padding-left:24px;
+  padding-right:24px;
+  transform:translateY(-12px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .35s ease,transform .35s ease,visibility .35s;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.mobile-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+.mobile-menu a{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  padding-top:16px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line-soft);
+}
+.mobile-menu .btn{
+  font-family:'Montserrat',sans-serif;
+  font-size:16px;
+  margin-top:24px;
+  border-bottom:none;
+  align-self:flex-start;
+}
 
-  /* ---------- KONTAKT / CTA ---------- */
-  .contact{
-    background:#fffdfc;
-  }
-  .contact-inner{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    box-shadow:0 30px 70px -30px rgba(87,0,47,0.28);
-  }
-  .contact-left{
-    background:var(--accent);
-    padding:56px 48px;
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  .contact-left .section-tag{color:#fff;}
-  .contact-left .section-tag::before{background:#fff;}
-  .contact-left h2{
-    color:#fff;
-    font-size:clamp(26px, 3vw, 34px);
-    margin-bottom:16px;
-  }
-  .contact-left p{
-    color:rgba(255,255,255,0.85);
-    max-width:420px;
-    margin-bottom:32px;
-    font-size:15px;
-  }
-  .contact-left .btn-row{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-  }
-  .contact-right{
-    background:#fff;
-    padding:56px 48px;
-    display:flex;
-    flex-direction:column;
-    gap:28px;
-    justify-content:center;
-  }
-  .info-row{
-    display:flex;
-    align-items:flex-start;
-    gap:16px;
-  }
-  .info-row .icon-wrap{
-    width:44px;
-    height:44px;
-    border-radius:12px;
-    background:var(--accent-soft);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-  }
-  .info-row .icon-wrap svg{width:20px;height:20px;stroke:var(--accent);}
-  .info-row h4{
-    font-family:'Montserrat', sans-serif;
-    font-size:14px;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:var(--text-faint);
-    font-weight:600;
-    margin-bottom:4px;
-  }
-  .info-row p, .info-row a{
-    font-size:16px;
-    font-weight:500;
-    color:var(--text);
-  }
+/* ============================================================
+   5. HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  padding-top:64px;
+  padding-bottom:96px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-240px;
+  right:-160px;
+  width:760px;
+  height:760px;
+  border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,var(--accent-glow),rgba(175,0,100,0) 68%);
+  pointer-events:none;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:64px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-copy{container-type:inline-size;}
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--accent-darker);
-    color:rgba(255,255,255,0.7);
-    padding-top:48px;
-    padding-bottom:48px;
-  }
-  .footer-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
-  }
-  .footer-inner img{height:24px;}
-  .footer-inner p{font-size:13px;}
-  .footer-links{
-    display:flex;
-    gap:24px;
-  }
-  .footer-links a{
-    font-size:13px;
-    color:rgba(255,255,255,0.7);
-  }
-  .footer-links a:hover{color:#fff;}
+.hero-title{
+  font-size:clamp(28px,9.2cqi,64px);
+  font-weight:500;
+  margin-bottom:24px;
+}
+.hero-title span{display:block;white-space:nowrap;}
+.hero-title .ital{font-style:italic;color:var(--accent);}
 
-  /* ---------- SCROLL REVEAL ---------- */
-  .reveal{
-    opacity:1;
-    transform:translateY(0);
-    transition:opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.pending{
-    opacity:0.001;
-    transform:translateY(12px);
-  }
-  .reveal.visible{
-    opacity:1;
-    transform:translateY(0);
-  }
+.hero-sub{
+  font-size:20px;
+  font-weight:300;
+  color:var(--text-muted);
+  max-width:46ch;
+  margin-bottom:36px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:44px;}
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:991px){
-    .nav-links, .nav-cta{display:none;}
-    .burger{display:flex;}
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-media{order:-1;}
-    .hero-media img{height:360px;}
-    .services-grid{grid-template-columns:repeat(2, 1fr);}
-    .about-inner{grid-template-columns:1fr;}
-    .about-media{height:320px;}
-    .contact-inner{grid-template-columns:1fr;}
-  }
+.hero-proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 32px;
+  padding-top:28px;
+  border-top:1px solid var(--line-soft);
+}
+.hero-proof li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  font-weight:500;
+}
+.hero-proof svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.6;flex:none;}
 
-  @media (max-width:768px){
-    section{padding-top:64px;padding-bottom:64px;}
-    .wrap{padding-left:20px;padding-right:20px;}
-    .hero{padding-top:48px;}
-    .hero h1{max-width:100%;}
-    .hero p.subtitle{max-width:100%;}
-    .services-grid{grid-template-columns:1fr;}
-    .about-points{grid-template-columns:1fr;}
-    .sterilization-strip{flex-direction:column;align-items:flex-start;padding:28px 26px;}
-    .contact-left, .contact-right{padding:40px 28px;}
-    .services-header{flex-direction:column;align-items:flex-start;}
-    .footer-inner{flex-direction:column;text-align:center;}
-    .footer-links{flex-wrap:wrap;justify-content:center;}
+/* --- hero medija: luk sa fotografijom --- */
+.hero-media{
+  position:relative;
+  perspective:1200px;
+  width:100%;
+  max-width:480px;
+  margin-left:auto;
+}
+.hero-arch{
+  position:relative;
+  border-radius:320px 320px 32px 32px;
+  overflow:hidden;
+  background:var(--accent-soft);
+  aspect-ratio:4/5;
+  transform-style:preserve-3d;
+  transform:rotateY(var(--tilt-y,0deg)) rotateX(var(--tilt-x,0deg));
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 40px 80px rgba(28,10,19,.14);
+}
+.hero-arch img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:56% 42%;
+  animation:archPaint 1.1s cubic-bezier(.65,0,.35,1) 2.2s backwards;
+}
+@keyframes archPaint{
+  from{clip-path:inset(100% 0 0 0);}
+  to{clip-path:inset(0 0 0 0);}
+}
+.arch-line{
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:320px 320px 32px 32px;
+  pointer-events:none;
+  animation:archPaint 1.1s cubic-bezier(.65,0,.35,1) 2.2s backwards;
+}
+.arch-frame{
+  position:absolute;
+  left:-20px;
+  right:-20px;
+  top:-20px;
+  bottom:-20px;
+  border:1px solid var(--accent);
+  opacity:.28;
+  border-radius:340px 340px 44px 44px;
+  pointer-events:none;
+  animation:archPaint 1.1s cubic-bezier(.65,0,.35,1) 2.5s backwards;
+}
+
+/* lebdeće kartice */
+.float-card{
+  position:absolute;
+  background:rgba(255,252,253,.9);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:20px;
+  padding-top:16px;
+  padding-bottom:16px;
+  padding-left:20px;
+  padding-right:20px;
+  box-shadow:0 20px 44px rgba(28,10,19,.14);
+  z-index:4;
+}
+.card-status{
+  top:44px;
+  left:-32px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  animation:floatCard 7s ease-in-out infinite;
+}
+.card-status .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 0 var(--accent-glow);
+  animation:pulseDot 2.4s ease-out infinite;
+  flex:none;
+}
+.card-status b{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.card-status span{display:block;font-size:12px;color:var(--text-muted);}
+@keyframes pulseDot{
+  0%{box-shadow:0 0 0 0 rgba(175,0,100,.4);}
+  70%{box-shadow:0 0 0 12px rgba(175,0,100,0);}
+  100%{box-shadow:0 0 0 0 rgba(175,0,100,0);}
+}
+@keyframes floatCard{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+.card-hands{
+  right:-24px;
+  bottom:96px;
+  max-width:200px;
+  animation:floatCard 8s ease-in-out .8s infinite;
+}
+.card-hands b{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  display:block;
+  margin-bottom:4px;
+}
+.card-hands span{font-size:12px;color:var(--text-muted);line-height:1.5;display:block;}
+
+/* --- 3D lak: potpisna animacija --- */
+.polish{
+  position:absolute;
+  left:-40px;
+  bottom:-16px;
+  width:232px;
+  height:248px;
+  z-index:5;
+  pointer-events:none;
+  perspective:900px;
+  perspective-origin:30% 60%;
+}
+.polish-rotor{
+  position:absolute;
+  inset:0;
+  transform-style:preserve-3d;
+  transform:rotateX(var(--pr-x,-4deg)) rotateY(var(--pr-y,-8deg));
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  animation:bottleRise 1s cubic-bezier(.2,.9,.25,1) .3s backwards;
+}
+@keyframes bottleRise{
+  from{transform:translateY(32px) rotateX(-4deg) rotateY(-8deg);opacity:0;}
+  to{transform:translateY(0) rotateX(-4deg) rotateY(-8deg);opacity:1;}
+}
+
+/* telo bocice: 16 stranica u krug */
+.bottle{
+  position:absolute;
+  left:56px;
+  bottom:24px;
+  width:0;
+  height:0;
+  transform-style:preserve-3d;
+}
+.bottle .face{
+  position:absolute;
+  bottom:0;
+  left:-12px;
+  width:24px;
+  height:124px;
+  background:linear-gradient(180deg,
+    rgba(255,255,255,.38) 0%,
+    rgba(252,243,247,.46) 15%,
+    rgba(255,255,255,.72) 19%,
+    rgba(175,0,100,.72) 23%,
+    rgba(175,0,100,.95) 34%,
+    rgba(122,0,70,.97) 78%,
+    rgba(78,0,44,.98) 100%);
+  transform:rotateY(calc(var(--i) * 22.5deg)) translateZ(40px);
+  backface-visibility:hidden;
+}
+.bottle-shade{
+  position:absolute;
+  left:-40px;
+  bottom:0;
+  width:80px;
+  height:124px;
+  border-radius:8px 8px 18px 18px;
+  background:
+    linear-gradient(90deg,rgba(78,0,44,.5) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,0) 66%,rgba(78,0,44,.44) 100%),
+    linear-gradient(96deg,rgba(255,255,255,0) 4%,rgba(255,255,255,.42) 14%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 78%,rgba(255,255,255,.22) 92%),
+    radial-gradient(ellipse 86% 16% at 50% 100%,rgba(255,255,255,.3),rgba(255,255,255,0) 70%);
+  transform:translateZ(41px);
+  pointer-events:none;
+}
+.bottle-sheen{
+  position:absolute;
+  left:-40px;
+  bottom:0;
+  width:80px;
+  height:124px;
+  overflow:hidden;
+  border-radius:8px 8px 18px 18px;
+  transform:translateZ(42px);
+}
+.bottle-sheen::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-70%;
+  width:44%;
+  height:140%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);
+  transform:skewX(-16deg);
+  animation:sheenSweep 9s ease-in-out 5s infinite;
+}
+@keyframes sheenSweep{
+  0%{left:-70%;}
+  16%{left:130%;}
+  100%{left:130%;}
+}
+.bottle-neck{
+  position:absolute;
+  bottom:124px;
+  left:-14px;
+  width:28px;
+  height:18px;
+  background:linear-gradient(180deg,rgba(247,227,238,.72),rgba(175,0,100,.8) 55%,rgba(122,0,70,.9));
+  border-radius:3px;
+  transform:translateZ(36px);
+}
+.bottle-mouth{
+  position:absolute;
+  bottom:138px;
+  left:-14px;
+  width:28px;
+  height:9px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 50% 36%,#4e002c,#2a0018);
+  transform:translateZ(36px);
+}
+.bottle-base{
+  position:absolute;
+  bottom:-10px;
+  left:-52px;
+  width:104px;
+  height:24px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 50% 42%,rgba(28,10,19,.24),rgba(28,10,19,0) 68%);
+  filter:blur(3px);
+}
+
+/* kapica sa cetkicom */
+.cap{
+  position:absolute;
+  left:56px;
+  bottom:156px;
+  width:0;
+  height:0;
+  transform-style:preserve-3d;
+  animation:capLift 2.8s cubic-bezier(.5,0,.3,1) .6s backwards;
+}
+@keyframes capLift{
+  0%{transform:translate3d(0,0,0) rotate(0deg) rotateY(0deg);}
+  34%{transform:translate3d(92px,-104px,40px) rotate(18deg) rotateY(420deg);}
+  56%{transform:translate3d(92px,-96px,40px) rotate(18deg) rotateY(540deg);}
+  100%{transform:translate3d(0,0,0) rotate(0deg) rotateY(720deg);}
+}
+.cap .face{
+  position:absolute;
+  bottom:0;
+  left:-9px;
+  width:18px;
+  height:80px;
+  background:linear-gradient(180deg,#661440 0%,#420c27 44%,#280717 100%);
+  transform:rotateY(calc(var(--i) * 30deg)) translateZ(24px);
+  backface-visibility:hidden;
+}
+.cap-shade{
+  position:absolute;
+  bottom:0;
+  left:-24px;
+  width:48px;
+  height:80px;
+  border-radius:6px 6px 4px 4px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.46) 0%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 62%,rgba(0,0,0,.42) 100%),
+    linear-gradient(96deg,rgba(255,255,255,.3) 8%,rgba(255,255,255,0) 26%);
+  transform:translateZ(25px);
+}
+.cap-top{
+  position:absolute;
+  bottom:74px;
+  left:-24px;
+  width:48px;
+  height:14px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 42% 32%,#7d1a4c,#340a1f 74%);
+}
+.brush{
+  position:absolute;
+  bottom:0;
+  left:-2px;
+  width:4px;
+  height:0;
+  transform:translateZ(18px);
+}
+.brush-stem{
+  position:absolute;
+  top:0;
+  left:-1px;
+  width:6px;
+  height:46px;
+  background:linear-gradient(90deg,#280717,#6b1442 60%,#3a0c23);
+  border-radius:3px;
+}
+.brush-tip{
+  position:absolute;
+  top:42px;
+  left:-7px;
+  width:18px;
+  height:38px;
+  border-radius:50% 50% 44% 44% / 26% 26% 74% 74%;
+  background:linear-gradient(170deg,var(--accent) 0%,var(--accent-deep) 58%,var(--accent-darker) 100%);
+  box-shadow:0 6px 14px rgba(78,0,44,.42);
+}
+
+/* kap laka i trag koji ostavlja */
+.drop{
+  position:absolute;
+  left:142px;
+  bottom:180px;
+  width:13px;
+  height:15px;
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+  background:linear-gradient(180deg,var(--accent),var(--accent-deep));
+  opacity:0;
+  animation:dropFall .6s cubic-bezier(.5,0,.85,.4) 1.6s forwards;
+}
+@keyframes dropFall{
+  0%{opacity:0;transform:translateY(0) scale(.6);}
+  14%{opacity:1;transform:translateY(4px) scale(1);}
+  86%{opacity:1;transform:translateY(88px) scaleY(1.35) scaleX(.82);}
+  100%{opacity:0;transform:translateY(100px) scaleY(.5) scaleX(1.4);}
+}
+.swatch{
+  position:absolute;
+  left:116px;
+  bottom:16px;
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 36% 26%,rgba(255,255,255,.44),rgba(255,255,255,0) 42%),
+    radial-gradient(circle at 60% 74%,var(--accent),var(--accent-deep) 96%);
+  box-shadow:0 12px 24px rgba(78,0,44,.26);
+  animation:swatchPop .9s cubic-bezier(.2,1.5,.4,1) 2.1s backwards;
+}
+@keyframes swatchPop{
+  0%{transform:scale(0);opacity:0;}
+  60%{transform:scale(1.12);opacity:1;}
+  100%{transform:scale(1);opacity:1;}
+}
+.swatch::after{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:50%;
+  border:1px solid var(--accent);
+  opacity:0;
+  animation:swatchRing 1.6s ease-out 2.4s;
+}
+@keyframes swatchRing{
+  0%{transform:scale(.6);opacity:.7;}
+  100%{transform:scale(1.25);opacity:0;}
+}
+
+/* ============================================================
+   6. TRAKA POVERENJA
+   ============================================================ */
+.strip{
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);
+  background:var(--bg-warm);
+}
+.strip-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding-top:40px;
+  padding-bottom:40px;
+  gap:32px;
+}
+.strip-item{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding-right:24px;
+  border-right:1px solid var(--line-soft);
+}
+.strip-item:last-child{border-right:none;padding-right:0;}
+.strip-item svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.4;flex:none;}
+.strip-item b{display:block;font-size:16px;font-weight:600;margin-bottom:4px;}
+.strip-item span{display:block;font-size:12px;color:var(--text-muted);letter-spacing:.02em;line-height:1.6;}
+
+/* ============================================================
+   7. UVOD / BOL
+   ============================================================ */
+.intro{background:var(--bg);}
+.intro-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:72px;
+  align-items:center;
+}
+.intro-quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.2vw,40px);
+  line-height:1.24;
+  color:var(--ink);
+  max-width:18ch;
+  text-wrap:balance;
+}
+.intro-quote em{font-style:italic;color:var(--accent);}
+.intro-text p + p{margin-top:20px;}
+.intro-text p{font-size:20px;font-weight:300;color:var(--text-muted);}
+
+/* ============================================================
+   8. USLUGE (3D tilt kartice)
+   ============================================================ */
+.services{background:var(--bg-warm);}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.svc{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--line-soft);
+  border-radius:var(--r-card);
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-left:32px;
+  padding-right:32px;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transition:box-shadow .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s ease;
+  will-change:transform;
+}
+.svc::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--accent-glow),transparent 62%);
+  opacity:0;
+  transition:opacity .5s ease;
+  pointer-events:none;
+}
+.svc:hover{
+  box-shadow:0 32px 64px rgba(28,10,19,.12);
+  border-color:rgba(175,0,100,.24);
+}
+.svc.is-tilt{transition:box-shadow .5s ease,border-color .5s ease;}
+.svc:hover::before{opacity:1;}
+.svc-icon{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:var(--accent-tint);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:28px;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),background .5s ease;
+  transform:translateZ(28px);
+}
+.svc-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+.svc:hover .svc-icon{transform:translateZ(44px) scale(1.06);background:var(--accent-soft);}
+.svc h3{font-size:28px;margin-bottom:12px;transform:translateZ(20px);}
+.svc p{font-size:16px;color:var(--text-muted);margin-bottom:24px;transform:translateZ(12px);}
+.svc-price{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border-top:1px solid var(--line-soft);
+  padding-top:20px;
+  width:100%;
+  transform:translateZ(16px);
+}
+
+/* ============================================================
+   9. CENOVNIK
+   ============================================================ */
+.price-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:48px;
+}
+.price-tab{
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:24px;
+  padding-right:24px;
+  border-radius:var(--r-pill);
+  border:1px solid var(--line);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  transition:all .35s ease;
+}
+.price-tab:hover{border-color:var(--accent);color:var(--accent);}
+.price-tab[aria-selected="true"]{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+  box-shadow:0 10px 24px var(--accent-glow);
+}
+.price-panel{
+  columns:2;
+  column-gap:64px;
+}
+.js .price-panel[hidden]{display:none;}
+.price-panel li{
+  break-inside:avoid;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  padding-top:16px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line-soft);
+  animation:rowIn .5s ease backwards;
+}
+.price-panel li:nth-child(1){animation-delay:.02s;}
+.price-panel li:nth-child(2){animation-delay:.05s;}
+.price-panel li:nth-child(3){animation-delay:.08s;}
+.price-panel li:nth-child(4){animation-delay:.11s;}
+.price-panel li:nth-child(5){animation-delay:.14s;}
+.price-panel li:nth-child(6){animation-delay:.17s;}
+.price-panel li:nth-child(7){animation-delay:.2s;}
+.price-panel li:nth-child(8){animation-delay:.23s;}
+@keyframes rowIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.p-name{font-size:16px;font-weight:500;}
+.p-dots{flex:1;border-bottom:1px dotted rgba(28,10,19,.24);transform:translateY(-4px);min-width:16px;}
+.p-val{font-size:16px;font-weight:600;color:var(--accent);white-space:nowrap;}
+.price-note{
+  margin-top:40px;
+  font-size:12px;
+  letter-spacing:.06em;
+  color:var(--text-faint);
+  text-transform:uppercase;
+}
+
+/* ============================================================
+   10. 4 I 6 RUKU (tamna sekcija)
+   ============================================================ */
+.hands{
+  background:var(--ink);
+  color:rgba(255,255,255,.76);
+  position:relative;
+  overflow:hidden;
+}
+.hands::before{
+  content:"";
+  position:absolute;
+  left:-180px;
+  bottom:-240px;
+  width:680px;
+  height:680px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(175,0,100,.34),rgba(175,0,100,0) 66%);
+  pointer-events:none;
+}
+.hands h2,.hands h3{color:#fff;}
+.hands-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hands p{color:rgba(255,255,255,.72);font-weight:300;}
+.hands .lead{color:rgba(255,255,255,.72);}
+.hands-list{margin-top:40px;display:grid;gap:16px;}
+.hands-list li{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:20px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  font-size:16px;
+}
+.hands-list b{font-weight:500;color:#fff;}
+.hands-list span{color:#f0b9d5;font-weight:600;white-space:nowrap;}
+
+/* tri para ruku, animirane linije */
+.hands-visual{
+  position:relative;
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.orbit{
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+}
+.orbit.o2{inset:13%;}
+.orbit.o3{inset:26%;}
+.orbit-dot{
+  position:absolute;
+  inset:0;
+  animation:orbitSpin 22s linear infinite;
+}
+.orbit-dot.d2{inset:13%;animation-duration:17s;animation-direction:reverse;}
+.orbit-dot.d3{inset:26%;animation-duration:13s;}
+.orbit-dot i{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:56px;
+  height:56px;
+  margin-left:-28px;
+  margin-top:-28px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(240,185,213,.46);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:orbitSpin 22s linear infinite reverse;
+}
+.orbit-dot.d2 i{animation-duration:17s;animation-direction:normal;}
+.orbit-dot.d3 i{animation-duration:13s;}
+.orbit-dot svg{width:22px;height:22px;stroke:#f0b9d5;fill:none;stroke-width:1.4;}
+@keyframes orbitSpin{to{transform:rotate(360deg);}}
+.hands-core{
+  position:relative;
+  z-index:3;
+  width:36%;
+  height:36%;
+  border-radius:50%;
+  background:radial-gradient(circle at 36% 30%,rgba(175,0,100,.9),rgba(78,0,44,.95));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow:0 24px 60px rgba(175,0,100,.34);
+}
+.hands-core b{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  color:#fff;
+  line-height:1;
+}
+.hands-core span{
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+  margin-top:8px;
+}
+
+/* ============================================================
+   11. STERILIZACIJA / KRAFT PAKET
+   ============================================================ */
+.clean-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:center;
+}
+.packet-stage{
+  perspective:1000px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.packet{
+  position:relative;
+  width:min(100%,380px);
+  aspect-ratio:3/2;
+  transform-style:preserve-3d;
+  transform:rotateX(12deg) rotateZ(-4deg);
+}
+.packet-body{
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  background:
+    repeating-linear-gradient(94deg,rgba(28,10,19,.03) 0 2px,rgba(28,10,19,0) 2px 7px),
+    linear-gradient(160deg,#f2e2d2,#e3ceb8);
+  box-shadow:0 30px 60px rgba(28,10,19,.18);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom:20px;
+  overflow:hidden;
+}
+.packet-tools{
+  display:flex;
+  gap:28px;
+  align-items:flex-end;
+  transform:translateY(8px);
+  transition:transform .8s cubic-bezier(.2,.7,.2,1) .25s;
+}
+.packet-tools svg{width:48px;height:136px;stroke:#7a6350;fill:none;stroke-width:1.4;}
+.packet-flap{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:52%;
+  border-radius:12px 12px 4px 4px;
+  background:
+    repeating-linear-gradient(94deg,rgba(28,10,19,.04) 0 2px,rgba(28,10,19,0) 2px 7px),
+    linear-gradient(170deg,#e9d6c2,#dcc4aa);
+  transform-origin:top center;
+  transform:rotateX(-168deg);
+  transition:transform 1s cubic-bezier(.3,.8,.3,1);
+  box-shadow:0 12px 24px rgba(28,10,19,.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.packet-seal{
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid rgba(175,0,100,.34);
+  border-radius:var(--r-pill);
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-left:16px;
+  padding-right:16px;
+  background:rgba(255,255,255,.5);
+  transform:rotateX(180deg);
+}
+.js .packet-flap{transform:rotateX(0deg);}
+.js .packet-tools{transform:translateY(40px);opacity:.4;}
+.js .in-view .packet-flap{transform:rotateX(-168deg);}
+.js .in-view .packet-tools{transform:translateY(8px);opacity:1;}
+
+.clean-points{margin-top:40px;display:grid;gap:24px;}
+.clean-point{display:flex;gap:16px;align-items:flex-start;}
+.clean-point svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5;flex:none;margin-top:4px;}
+.clean-point b{display:block;font-size:16px;font-weight:600;margin-bottom:4px;}
+.clean-point span{font-size:16px;color:var(--text-muted);}
+
+/* ============================================================
+   12. PROCES
+   ============================================================ */
+.process{background:var(--bg-warm);}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  position:relative;
+}
+.steps::before{
+  content:"";
+  position:absolute;
+  top:28px;
+  left:28px;
+  width:calc(75% + 18px);
+  height:1px;
+  background:var(--line);
+}
+.steps::after{
+  content:"";
+  position:absolute;
+  top:28px;
+  left:28px;
+  width:calc(75% + 18px);
+  height:1px;
+  background:var(--accent);
+  transform-origin:left;
+  transform:scaleX(1);
+  transition:transform 1.6s cubic-bezier(.4,.5,.2,1);
+}
+.js .steps::after{transform:scaleX(0);}
+.js .steps.in-view::after{transform:scaleX(1);}
+.step{position:relative;padding-right:16px;}
+.step-num{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:var(--bg-warm);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:24px;
+  position:relative;
+  z-index:2;
+}
+.step h3{font-size:20px;margin-bottom:8px;}
+.step p{font-size:16px;color:var(--text-muted);}
+
+/* ============================================================
+   13. O NAMA
+   ============================================================ */
+.about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:72px;
+  align-items:center;
+}
+.about-media{position:relative;}
+.ph{
+  border-radius:var(--r-card);
+  background:
+    repeating-linear-gradient(135deg,rgba(28,10,19,.04) 0 8px,rgba(28,10,19,0) 8px 16px),
+    var(--accent-tint);
+  border:1px solid var(--line-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  padding-top:24px;
+  padding-bottom:24px;
+  padding-left:24px;
+  padding-right:24px;
+}
+.about-media .ph{aspect-ratio:4/5;border-radius:260px 260px 24px 24px;}
+.about-badge{
+  position:absolute;
+  right:-24px;
+  bottom:40px;
+  background:#fff;
+  border-radius:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:24px;
+  padding-right:24px;
+  box-shadow:0 24px 48px rgba(28,10,19,.14);
+  border:1px solid var(--line-soft);
+  max-width:216px;
+}
+.about-badge b{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  display:block;
+  margin-bottom:4px;
+}
+.about-badge span{font-size:12px;color:var(--text-muted);line-height:1.6;display:block;}
+.about-text p{font-size:20px;font-weight:300;color:var(--text-muted);}
+.about-text p + p{margin-top:20px;}
+.about-check{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.about-check li{display:flex;align-items:center;gap:12px;font-size:16px;}
+.about-check svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;flex:none;}
+
+/* ============================================================
+   14. FAQ
+   ============================================================ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start;}
+.faq-list{border-top:1px solid var(--line-soft);}
+.faq-item{border-bottom:1px solid var(--line-soft);}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:28px;
+  padding-bottom:28px;
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  color:var(--ink);
+  transition:color .3s ease;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:hover{color:var(--accent);}
+.faq-sign{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  position:relative;
+  flex:none;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s ease,background .3s ease;
+}
+.faq-sign::before,.faq-sign::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:12px;
+  height:1.5px;
+  margin-left:-6px;
+  background:var(--ink);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),background .3s ease;
+}
+.faq-sign::after{transform:rotate(90deg);}
+.faq-item[open] .faq-sign{transform:rotate(135deg);background:var(--accent);border-color:var(--accent);}
+.faq-item[open] .faq-sign::before,.faq-item[open] .faq-sign::after{background:#fff;}
+.faq-answer{
+  padding-bottom:28px;
+  color:var(--text-muted);
+  max-width:60ch;
+  animation:faqOpen .4s ease;
+}
+@keyframes faqOpen{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+
+/* ============================================================
+   15. KONTAKT
+   ============================================================ */
+.contact{background:var(--bg-warm);}
+.contact-card{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  border-radius:32px;
+  overflow:hidden;
+  min-width:0;
+  box-shadow:0 40px 80px rgba(28,10,19,.14);
+}
+.contact-card > div{min-width:0;}
+.contact-left{
+  background:var(--accent);
+  color:#fff;
+  padding-top:64px;
+  padding-bottom:64px;
+  padding-left:56px;
+  padding-right:56px;
+  position:relative;
+  overflow:hidden;
+}
+.contact-left::before{
+  content:"";
+  position:absolute;
+  right:-120px;
+  top:-120px;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 66%);
+}
+.contact-left h2{color:#fff;font-size:clamp(28px,3.2vw,44px);max-width:14ch;position:relative;}
+.contact-left p{color:rgba(255,255,255,.84);margin-top:20px;margin-bottom:36px;font-weight:300;position:relative;max-width:42ch;}
+.contact-left .btn-row{position:relative;}
+.contact-right{
+  background:#fff;
+  padding-top:64px;
+  padding-bottom:64px;
+  padding-left:48px;
+  padding-right:48px;
+  display:grid;
+  gap:28px;
+  align-content:center;
+}
+.info-row{display:flex;gap:20px;align-items:flex-start;}
+.info-ico{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--accent-tint);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  transition:background .35s ease,transform .35s ease;
+}
+.info-row:hover .info-ico{background:var(--accent-soft);transform:translateY(-2px);}
+.info-ico svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.6;}
+.info-row b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:4px;}
+.info-row span,.info-row a{font-size:16px;font-weight:500;overflow-wrap:anywhere;}
+.info-row a:hover{color:var(--accent);}
+
+/* ============================================================
+   16. FOOTER
+   ============================================================ */
+footer{
+  background:var(--ink);
+  color:rgba(255,255,255,.6);
+  padding-top:72px;
+  padding-bottom:40px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:48px;
+  padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+footer img{height:40px;width:auto;margin-bottom:24px;filter:brightness(0) invert(1);}
+.footer-top p{font-size:16px;font-weight:300;max-width:38ch;}
+.footer-col h4{color:#fff;font-size:16px;font-family:'Montserrat',sans-serif;font-weight:600;margin-bottom:20px;letter-spacing:.02em;}
+.footer-col li{margin-bottom:12px;font-size:16px;}
+.footer-col a:hover{color:#f0b9d5;}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:32px;
+  font-size:12px;
+  letter-spacing:.04em;
+  flex-wrap:wrap;
+}
+
+/* ============================================================
+   17. REVEAL + RESPONSIVE
+   ============================================================ */
+.rv{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.js .rv.pending{transform:translateY(14px);}
+.js .rv.shown{transform:translateY(0);}
+
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:72px;}
+  .hero-copy{max-width:640px;}
+  .polish{left:-24px;}
+  .intro-grid,.hands-grid,.clean-grid,.about-grid,.faq-grid{grid-template-columns:1fr;gap:48px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .strip-grid{grid-template-columns:repeat(2,1fr);gap:32px;}
+  .strip-item:nth-child(2){border-right:none;}
+  .contact-card{grid-template-columns:1fr;}
+  .hands-visual{max-width:440px;margin-left:auto;margin-right:auto;width:100%;}
+  .about-media .ph{max-width:440px;}
+}
+
+@media (max-width:991px){
+  .nav-links,.nav-cta{display:none;}
+  .burger{display:block;}
+  .topbar-list li:nth-child(1){display:none;}
+}
+
+@media (max-width:860px){
+  .steps{grid-template-columns:repeat(2,1fr);gap:40px 24px;}
+  .steps::before,.steps::after{display:none;}
+  .price-panel{columns:1;}
+  .footer-top{grid-template-columns:1fr;gap:40px;}
+}
+
+@media (max-width:768px){
+  :root{--sec-pad:72px;--header-h:72px;}
+  .wrap{padding-left:20px;padding-right:20px;}
+  .hero{padding-top:48px;padding-bottom:72px;}
+  .hero-sub{font-size:16px;}
+  .lead,.intro-text p,.about-text p{font-size:16px;}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:20px;margin-bottom:40px;}
+  .services-grid{grid-template-columns:1fr;}
+  .strip-grid{grid-template-columns:1fr;gap:24px;}
+  .strip-item{border-right:none;padding-right:0;}
+  .about-check{grid-template-columns:1fr;}
+  .contact-left,.contact-right{padding-left:28px;padding-right:28px;padding-top:48px;padding-bottom:48px;}
+  .card-status{left:-8px;top:24px;}
+  .card-hands{right:-8px;bottom:64px;max-width:176px;}
+  .polish{width:200px;height:216px;left:-16px;bottom:-24px;transform:scale(.88);transform-origin:left bottom;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+  .topbar-inner{justify-content:center;}
+  .topbar-social{display:none;}
+  .hands-core{width:52%;height:52%;}
+  .hands-core b{font-size:28px;}
+  .hands-core span{font-size:12px;letter-spacing:.1em;}
+  .orbit-dot i{width:48px;height:48px;margin-left:-24px;margin-top:-24px;}
+}
+
+@media (max-width:420px){
+  .card-hands{display:none;}
+  .about-badge{right:0;bottom:-24px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
   }
+}
 </style>
 </head>
 <body>
 
+<!-- ============ TOP TRAKA ============ -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <ul class="topbar-list">
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>Kosovska 1, lokal 6, sprat 3</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span>Svaki dan 09:00 - 20:00</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        <a href="tel:+381628646377">+381 62 864 6377</a>
+      </li>
+    </ul>
+    <div class="topbar-social">
+      <a href="https://www.instagram.com/beautytime_belgrade/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/BeautyTimeBar.belgrade" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
 <header id="site-header">
   <div class="wrap nav-inner">
-    <a href="#" class="logo">
-      <img src="assets/logo.png" alt="Beauty Time - beauty bar i škola">
+    <a href="#pocetak" class="logo">
+      <img src="assets/logo.png" alt="Beauty Time, beauty bar i škola">
     </a>
     <nav class="nav-links">
       <a href="#usluge">Usluge</a>
+      <a href="#cenovnik">Cenovnik</a>
+      <a href="#higijena">Sterilizacija</a>
       <a href="#o-nama">O nama</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#pitanja">Pitanja</a>
     </nav>
     <div class="nav-cta">
-      <a href="tel:+381601234567" class="btn btn-outline">Pozovi salon</a>
-      <a href="#kontakt" class="btn btn-primary">Zakaži termin</a>
+      <a href="tel:+381628646377" class="btn btn-ghost">062 864 6377</a>
+      <a href="#kontakt" class="btn btn-primary">Rezerviši termin</a>
     </div>
-    <button class="burger" id="burgerBtn" aria-label="Otvori meni">
+    <button class="burger" id="burgerBtn" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#usluge" class="mobile-link">Usluge</a>
-  <a href="#o-nama" class="mobile-link">O nama</a>
-  <a href="#kontakt" class="mobile-link">Kontakt</a>
-  <a href="#kontakt" class="btn btn-primary mobile-link">Zakaži termin</a>
+  <a href="#usluge" class="m-link">Usluge</a>
+  <a href="#cenovnik" class="m-link">Cenovnik</a>
+  <a href="#higijena" class="m-link">Sterilizacija</a>
+  <a href="#o-nama" class="m-link">O nama</a>
+  <a href="#pitanja" class="m-link">Pitanja</a>
+  <a href="#kontakt" class="btn btn-primary m-link">Rezerviši termin</a>
 </div>
 
-<section class="hero">
+<!-- ============ HERO ============ -->
+<section class="hero" id="pocetak">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <span class="section-tag">Kosovska 1, centar Beograda</span>
-      <h1>Tvoj sat za lepotu, u srcu Beograda</h1>
-      <p class="subtitle">Manikir, pedikir, spa i brow tretmani na jednom mestu. Instrumenti prolaze kroz autoklav pre svake usluge, a termin dobijaš isti dan.</p>
-      <a href="#kontakt" class="btn btn-primary">Zakaži termin telefonom</a>
+      <span class="eyebrow">Beauty bar u centru Beograda</span>
+      <h1 class="hero-title">
+        <span>Manikir, obrve i kosa</span>
+        <span class="ital">u jednom terminu</span>
+      </h1>
+      <p class="hero-sub">Kod nas dve ili tri majstorice rade na tebi istovremeno, pa ono što obično pojede pola dana staje u jedan dolazak na Kosovsku 1.</p>
+      <div class="hero-actions">
+        <a href="tel:+381628646377" class="btn btn-primary">
+          Rezerviši termin
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#cenovnik" class="btn btn-ghost">Pogledaj cene</a>
+      </div>
+      <ul class="hero-proof">
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          Autoklav i kraft paket
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Svaki dan do 20h
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Kosovska 1
+        </li>
+      </ul>
     </div>
-    <div class="hero-media">
-      <img src="assets/LTS_8329-1.jpg" alt="Manikirka u roze rukavicama radi manikir klijentkinji u salonu Beauty Time">
-      <div class="hero-badge">
-        <span>Otvoreno svaki dan, 09:00 - 20:00</span>
+
+    <div class="hero-media" id="heroMedia">
+      <div class="hero-arch" id="heroArch">
+        <img src="assets/LTS_8329-1.jpg" alt="Majstorica u roze rukavicama turpija nokte klijentkinji u salonu Beauty Time">
+        <span class="arch-line"></span>
+      </div>
+      <span class="arch-frame"></span>
+
+      <div class="float-card card-status">
+        <span class="dot"></span>
+        <div>
+          <b id="statusLabel">Radimo svaki dan</b>
+          <span id="statusHours">09:00 - 20:00</span>
+        </div>
+      </div>
+
+      <div class="float-card card-hands">
+        <b>4 i 6 ruku</b>
+        <span>Manikir, pedikir i obrve rade dve ili tri majstorice odjednom.</span>
+      </div>
+
+      <!-- Potpisna 3D animacija: lak se otvara i ostavlja kap boje -->
+      <div class="polish" aria-hidden="true">
+        <div class="polish-rotor" id="polishRotor">
+          <div class="bottle">
+            <span class="face" style="--i:0"></span><span class="face" style="--i:1"></span>
+            <span class="face" style="--i:2"></span><span class="face" style="--i:3"></span>
+            <span class="face" style="--i:4"></span><span class="face" style="--i:5"></span>
+            <span class="face" style="--i:6"></span><span class="face" style="--i:7"></span>
+            <span class="face" style="--i:8"></span><span class="face" style="--i:9"></span>
+            <span class="face" style="--i:10"></span><span class="face" style="--i:11"></span>
+            <span class="face" style="--i:12"></span><span class="face" style="--i:13"></span>
+            <span class="face" style="--i:14"></span><span class="face" style="--i:15"></span>
+            <span class="bottle-shade"></span>
+            <span class="bottle-sheen"></span>
+            <span class="bottle-neck"></span>
+            <span class="bottle-mouth"></span>
+            <span class="bottle-base"></span>
+          </div>
+          <div class="cap">
+            <span class="face" style="--i:0"></span><span class="face" style="--i:1"></span>
+            <span class="face" style="--i:2"></span><span class="face" style="--i:3"></span>
+            <span class="face" style="--i:4"></span><span class="face" style="--i:5"></span>
+            <span class="face" style="--i:6"></span><span class="face" style="--i:7"></span>
+            <span class="face" style="--i:8"></span><span class="face" style="--i:9"></span>
+            <span class="face" style="--i:10"></span><span class="face" style="--i:11"></span>
+            <span class="cap-shade"></span>
+            <span class="cap-top"></span>
+            <span class="brush">
+              <span class="brush-stem"></span>
+              <span class="brush-tip"></span>
+            </span>
+          </div>
+          <span class="drop"></span>
+          <span class="swatch"></span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="pain">
-  <div class="wrap pain-inner reveal pending">
-    <p>Ceo dan trčiš između posla i obaveza i nemaš gde da stigneš na manikir, pa na pedikir, pa još na obrve. U Beauty Time-u sve to radiš na jednom mestu, na Kosovskoj 1, bez trčanja po gradu. Dolaziš jednom i izlaziš sređena od glave do pete.</p>
-  </div>
-</section>
-
-<section id="usluge">
-  <div class="wrap">
-    <div class="services-header reveal pending">
+<!-- ============ TRAKA POVERENJA ============ -->
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item rv pending">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
       <div>
-        <span class="section-tag">Usluge</span>
-        <h2 class="section-title">Sve što ti treba, pod jednim krovom</h2>
+        <b>Autoklav pred tobom</b>
+        <span>Kraft paket sa instrumentima otvaramo tek kad sedneš.</span>
       </div>
-      <p class="section-lead">Od manikira do frizerskih usluga, biraš tretman ili kombinuješ nekoliko u jednoj poseti.</p>
+    </div>
+    <div class="strip-item rv pending">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5"/></svg>
+      <div>
+        <b>Sve na jednom spratu</b>
+        <span>Nokti, obrve, kosa i masaža u istom prostoru.</span>
+      </div>
+    </div>
+    <div class="strip-item rv pending">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <div>
+        <b>Kosovska 1, centar</b>
+        <span>Lokal 6 na trećem spratu, dva minuta od Terazija.</span>
+      </div>
+    </div>
+    <div class="strip-item rv pending">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <div>
+        <b>Otvoreno 365 dana</b>
+        <span>Od 09:00 do 20:00, i subotom i nedeljom.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ UVOD ============ -->
+<section class="sec intro">
+  <div class="wrap intro-grid">
+    <p class="intro-quote rv pending">Manikir u jednom salonu, obrve u drugom, <em>frizer u trećem.</em></p>
+    <div class="intro-text rv pending">
+      <p>Tri termina, tri dolaska, ceo slobodan dan potrošen na put i čekanje. A onda ti se svejedno nešto ne uklopi.</p>
+      <p>Beauty Time je napravljen da to skratiš na jedan dolazak. Sve usluge su u istom prostoru, a kad ti se žuri, na tebi radi više majstorica odjednom.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USLUGE ============ -->
+<section class="sec services" id="usluge">
+  <div class="wrap">
+    <div class="sec-head rv pending">
+      <div>
+        <span class="eyebrow">Usluge</span>
+        <h2 class="h2">Sve što ti treba, <em>na istoj adresi</em></h2>
+      </div>
+      <p class="lead">Biraš jednu uslugu ili spajaš nekoliko u istom terminu. Cene ispod su početne, tačnu ti kažemo kad čujemo šta radiš.</p>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 21v-6M7 3h10l-1 8a4 4 0 0 1-8 0L7 3z"/></svg>
+    <div class="services-grid" id="svcGrid">
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 13V5.6a1.6 1.6 0 0 1 3.2 0V12"/><path d="M11.7 11.6V4.4a1.6 1.6 0 0 1 3.2 0v8"/><path d="M14.9 12.6V7.4a1.6 1.6 0 0 1 3.2 0V15a6 6 0 0 1-6 6h-1.1a4 4 0 0 1-2.8-1.2l-3.3-3.3a1.6 1.6 0 0 1 2.3-2.3l2.3 2.2"/></svg>
         </div>
         <h3>Manikir</h3>
-        <p>Klasični, gel i SPA manikir. Oblik i boju biraš ti, mi vodimo ruku.</p>
-      </div>
+        <p>Klasičan, japanski, gel lak, izlivanje i korekcija. Oblik i dužinu biramo zajedno, ostalo je naš posao.</p>
+        <span class="svc-price">Od 2500 RSD</span>
+      </article>
 
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-1.5 2-2 4.5-1.5 7 .3 1.6 1.5 2.5 1.5 4 0 2-1 4-1 6M15 4c1 2 1.2 4 .8 6.5-.3 1.6-1.5 2.5-1.5 4 0 2 1 4 1 6"/></svg>
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 21c-2-2.4-2.9-4.7-2.9-7 0-3.1 2.1-5.3 4.8-5.3 2.5 0 4.4 1.8 4.4 4.5 0 2.1-1.1 3.5-1.1 5.2 0 1 .3 1.9.8 2.6z"/><circle cx="16.4" cy="6.6" r="1.4"/><circle cx="18.6" cy="9.6" r="1.2"/></svg>
         </div>
         <h3>Pedikir</h3>
-        <p>Nega stopala koja traje, sa pažnjom na svaki detalj.</p>
-      </div>
+        <p>Smart pedikir, obrada stopala i prstiju, sa lakom ili gel lakom. Bez sečenja gde ne treba.</p>
+        <span class="svc-price">Od 3000 RSD</span>
+      </article>
 
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-2 6-5.5 6-9 0-3-2-6-6-9-4 3-6 6-6 9 0 3.5 2 7 6 9z"/></svg>
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8.4c2.2-1.9 4.5-2.9 7-2.9s4.8 1 7 2.9"/><path d="M3.6 15c2.8-2.6 5.6-3.9 8.4-3.9s5.6 1.3 8.4 3.9c-2.8 2.6-5.6 3.9-8.4 3.9S6.4 17.6 3.6 15z"/><circle cx="12" cy="15" r="2"/></svg>
         </div>
-        <h3>SPA tretmani</h3>
-        <p>Opuštanje za telo i lice, u tišini salona na Kosovskoj.</p>
-      </div>
+        <h3>Obrve i trepavice</h3>
+        <p>Korekcija, farbanje, brow lift, posvetljivanje, lash lift i nadograđivanje trepavica od clean look do volumena.</p>
+        <span class="svc-price">Od 1800 RSD</span>
+      </article>
 
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c2-4 5-6 8-6s6 2 8 6"/></svg>
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M20 4L8.6 15.4M8.6 8.6L14 14M14 14l6 6"/></svg>
         </div>
-        <h3>Brow tretmani</h3>
-        <p>Oblikovanje i bojenje obrva, prilagođeno tvom licu.</p>
-      </div>
+        <h3>Frizerske usluge</h3>
+        <p>Šišanje, feniranje, styling i farbanje. Total blond, airtouch, balayage i countouring radi kolorista.</p>
+        <span class="svc-price">Od 2000 RSD</span>
+      </article>
 
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M20 4L8.5 15.5M8.5 8.5L14 14M14 14l6 6"/></svg>
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-4.8 3.1-8 8-8 0 4.8-3.2 8-8 8z"/><path d="M12 21c0-4.8-3.1-8-8-8 0 4.8 3.2 8 8 8z"/><path d="M12 21c-2.2-4-2.2-8.2 0-12 2.2 3.8 2.2 8 0 12z"/></svg>
         </div>
-        <h3>Frizerski saloni</h3>
-        <p>Šišanje, feniranje i styling za svaki dan i za svaku priliku.</p>
-      </div>
+        <h3>Masaža i SPA</h3>
+        <p>Klasična i relaks masaža od 30 do 90 minuta, plus Beauty Time spa uz manikir ili pedikir.</p>
+        <span class="svc-price">Od 1000 RSD</span>
+      </article>
 
-      <div class="service-card reveal pending">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12c0-2 1.5-3.5 3.5-3.5S12 10 12 12s1.5 3.5 3.5 3.5S19 14 19 12"/><path d="M5 12v5M19 12v5"/></svg>
+      <article class="svc rv pending">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M4.5 20c0-3 3.4-4.8 7.5-4.8s7.5 1.8 7.5 4.8"/><path d="M18.5 9.5c1.4 0 2.5-1.1 2.5-2.5M5.5 9.5A2.5 2.5 0 0 1 3 7"/></svg>
         </div>
         <h3>Tretmani u 4 i 6 ruku</h3>
-        <p>Više terapeuta radi odjednom, ti štediš vreme bez žurbe.</p>
-      </div>
-    </div>
-
-    <div class="sterilization-strip reveal pending">
-      <div class="icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-      </div>
-      <div>
-        <h4>Instrumenti se sterilišu autoklavom</h4>
-        <p>Svaki alat koji dolazi u kontakt sa tobom prolazi kroz autoklav pre svake usluge. Sigurnost nije opcija, to je standard po kom radimo.</p>
-      </div>
+        <p>Dve ili tri majstorice rade istovremeno: manikir i pedikir, ili manikir, pedikir i obrve u istom terminu.</p>
+        <span class="svc-price">Doplata od 600 RSD</span>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="o-nama" class="about">
-  <div class="wrap about-inner">
-    <div class="about-media reveal pending">
-      FOTOGRAFIJA PROSTORA SALONA
-    </div>
-    <div class="about-copy reveal pending">
-      <span class="section-tag">O nama</span>
-      <h2 class="section-title">Salon u kom se ne žuri</h2>
-      <p>Beauty Time je salon u centru Beograda, na Kosovskoj 1. Radimo manikir, pedikir, spa, brow tretmane, frizerske usluge i tretmane u 4 i 6 ruku, sve pod jednim krovom.</p>
-      <p>Prostor je uređen da se u njemu ostane, ne da se kroz njega proleti. Tvoj termin je tvoje vreme, niko te ne požuruje i niko ti ne nudi ono što ti ne treba.</p>
-      <div class="about-points">
-        <div class="about-point">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-          <span>Autoklav sterilizacija instrumenata</span>
-        </div>
-        <div class="about-point">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-          <span>Centar Beograda, Kosovska 1</span>
-        </div>
-        <div class="about-point">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-          <span>Otvoreno svaki dan 09:00 - 20:00</span>
-        </div>
-        <div class="about-point">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-          <span>Usluge u 4 i 6 ruku za manje čekanja</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="kontakt" class="contact">
+<!-- ============ CENOVNIK ============ -->
+<section class="sec" id="cenovnik">
   <div class="wrap">
-    <div class="contact-inner reveal pending">
+    <div class="sec-head rv pending">
+      <div>
+        <span class="eyebrow">Cenovnik</span>
+        <h2 class="h2">Cene stoje <em>crno na belo</em></h2>
+      </div>
+      <p class="lead">Bez naknadnog dodavanja stavki. Ako tokom tretmana treba nešto više, kažemo ti cenu pre nego što počnemo.</p>
+    </div>
+
+    <div class="price-tabs" role="tablist" aria-label="Kategorije cenovnika">
+      <button class="price-tab" role="tab" aria-selected="true" aria-controls="p-manikir" id="t-manikir">Manikir</button>
+      <button class="price-tab" role="tab" aria-selected="false" aria-controls="p-pedikir" id="t-pedikir">Pedikir</button>
+      <button class="price-tab" role="tab" aria-selected="false" aria-controls="p-obrve" id="t-obrve">Obrve i trepavice</button>
+      <button class="price-tab" role="tab" aria-selected="false" aria-controls="p-frizer" id="t-frizer">Frizer</button>
+      <button class="price-tab" role="tab" aria-selected="false" aria-controls="p-masaza" id="t-masaza">Masaža i SPA</button>
+      <button class="price-tab" role="tab" aria-selected="false" aria-controls="p-ruke" id="t-ruke">4 i 6 ruku</button>
+    </div>
+
+    <ul class="price-panel" id="p-manikir" role="tabpanel" aria-labelledby="t-manikir">
+      <li><span class="p-name">Manikir bez lakiranja</span><span class="p-dots"></span><span class="p-val">2500 RSD</span></li>
+      <li><span class="p-name">Manikir sa lakom</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Japanski manikir</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Manikir paket S</span><span class="p-dots"></span><span class="p-val">5000 RSD</span></li>
+      <li><span class="p-name">Manikir paket M</span><span class="p-dots"></span><span class="p-val">5500 RSD</span></li>
+      <li><span class="p-name">Manikir paket L</span><span class="p-dots"></span><span class="p-val">6000 RSD</span></li>
+      <li><span class="p-name">Korekcija gela, dužina M</span><span class="p-dots"></span><span class="p-val">6000 RSD</span></li>
+      <li><span class="p-name">Izlivanje noktiju, dužina M</span><span class="p-dots"></span><span class="p-val">7000 RSD</span></li>
+      <li><span class="p-name">Izlivanje noktiju, dužina L</span><span class="p-dots"></span><span class="p-val">8000 RSD</span></li>
+      <li><span class="p-name">Dizajn noktiju</span><span class="p-dots"></span><span class="p-val">600 - 1000 RSD</span></li>
+      <li><span class="p-name">Uklanjanje gel laka ili gela</span><span class="p-dots"></span><span class="p-val">1200 RSD</span></li>
+      <li><span class="p-name">Muški manikir</span><span class="p-dots"></span><span class="p-val">3500 RSD</span></li>
+    </ul>
+
+    <ul class="price-panel" id="p-pedikir" role="tabpanel" aria-labelledby="t-pedikir">
+      <li><span class="p-name">Obrada prstiju</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Obrada prstiju sa lakom</span><span class="p-dots"></span><span class="p-val">3500 RSD</span></li>
+      <li><span class="p-name">Obrada prstiju sa gel lakom</span><span class="p-dots"></span><span class="p-val">4000 RSD</span></li>
+      <li><span class="p-name">Obrada stopala</span><span class="p-dots"></span><span class="p-val">3500 RSD</span></li>
+      <li><span class="p-name">Smart pedikir bez lakiranja</span><span class="p-dots"></span><span class="p-val">4500 RSD</span></li>
+      <li><span class="p-name">Smart pedikir sa lakom</span><span class="p-dots"></span><span class="p-val">5000 RSD</span></li>
+      <li><span class="p-name">Smart pedikir sa gel lakom</span><span class="p-dots"></span><span class="p-val">6000 RSD</span></li>
+      <li><span class="p-name">Smart pedikir za muškarce</span><span class="p-dots"></span><span class="p-val">5000 RSD</span></li>
+    </ul>
+
+    <ul class="price-panel" id="p-obrve" role="tabpanel" aria-labelledby="t-obrve">
+      <li><span class="p-name">Korekcija obrva</span><span class="p-dots"></span><span class="p-val">1800 RSD</span></li>
+      <li><span class="p-name">Farbanje obrva</span><span class="p-dots"></span><span class="p-val">1800 RSD</span></li>
+      <li><span class="p-name">Korekcija i farbanje</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Brow lift sa korekcijom i farbanjem</span><span class="p-dots"></span><span class="p-val">4000 RSD</span></li>
+      <li><span class="p-name">Posvetljivanje obrva</span><span class="p-dots"></span><span class="p-val">2500 RSD</span></li>
+      <li><span class="p-name">Farbanje trepavica</span><span class="p-dots"></span><span class="p-val">1100 RSD</span></li>
+      <li><span class="p-name">Lash lift trepavica</span><span class="p-dots"></span><span class="p-val">4000 RSD</span></li>
+      <li><span class="p-name">Nadograđivanje "clean look"</span><span class="p-dots"></span><span class="p-val">4500 RSD</span></li>
+      <li><span class="p-name">Hibridno nadograđivanje</span><span class="p-dots"></span><span class="p-val">5500 RSD</span></li>
+      <li><span class="p-name">Wow volumen</span><span class="p-dots"></span><span class="p-val">7000 RSD</span></li>
+      <li><span class="p-name">Depilacija nausnica</span><span class="p-dots"></span><span class="p-val">500 RSD</span></li>
+    </ul>
+
+    <ul class="price-panel" id="p-frizer" role="tabpanel" aria-labelledby="t-frizer">
+      <li><span class="p-name">Šišanje šiški</span><span class="p-dots"></span><span class="p-val">1500 RSD</span></li>
+      <li><span class="p-name">Šišanje krajeva</span><span class="p-dots"></span><span class="p-val">2000 RSD</span></li>
+      <li><span class="p-name">Pranje, šišanje, feniranje</span><span class="p-dots"></span><span class="p-val">5000 RSD</span></li>
+      <li><span class="p-name">Muško šišanje</span><span class="p-dots"></span><span class="p-val">3500 RSD</span></li>
+      <li><span class="p-name">Feniranje po formi</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Feniranje styling</span><span class="p-dots"></span><span class="p-val">4000 RSD</span></li>
+      <li><span class="p-name">Farbanje izrastka</span><span class="p-dots"></span><span class="p-val">7000 RSD</span></li>
+      <li><span class="p-name">Farbanje u jednom tonu, do ramena</span><span class="p-dots"></span><span class="p-val">10000 RSD</span></li>
+      <li><span class="p-name">Balayage, srednja dužina</span><span class="p-dots"></span><span class="p-val">25000 RSD</span></li>
+      <li><span class="p-name">Airtouch, duga kosa</span><span class="p-dots"></span><span class="p-val">30000 RSD</span></li>
+      <li><span class="p-name">Total blond, srednja dužina</span><span class="p-dots"></span><span class="p-val">25000 RSD</span></li>
+      <li><span class="p-name">Nega Tokio Inkarami, srednja dužina</span><span class="p-dots"></span><span class="p-val">15000 RSD</span></li>
+    </ul>
+
+    <ul class="price-panel" id="p-masaza" role="tabpanel" aria-labelledby="t-masaza">
+      <li><span class="p-name">Beauty Time spa</span><span class="p-dots"></span><span class="p-val">1000 RSD</span></li>
+      <li><span class="p-name">Klasična masaža, 30 minuta</span><span class="p-dots"></span><span class="p-val">3000 RSD</span></li>
+      <li><span class="p-name">Klasična masaža, 60 minuta</span><span class="p-dots"></span><span class="p-val">4500 RSD</span></li>
+      <li><span class="p-name">Klasična masaža, 90 minuta</span><span class="p-dots"></span><span class="p-val">5500 RSD</span></li>
+    </ul>
+
+    <ul class="price-panel" id="p-ruke" role="tabpanel" aria-labelledby="t-ruke">
+      <li><span class="p-name">Manikir i pedikir odjednom</span><span class="p-dots"></span><span class="p-val">+1800 RSD</span></li>
+      <li><span class="p-name">Manikir i obrve odjednom</span><span class="p-dots"></span><span class="p-val">+1200 RSD</span></li>
+      <li><span class="p-name">Pedikir i obrve odjednom</span><span class="p-dots"></span><span class="p-val">+600 RSD</span></li>
+      <li><span class="p-name">Manikir, pedikir i obrve odjednom</span><span class="p-dots"></span><span class="p-val">+2000 RSD</span></li>
+    </ul>
+
+    <p class="price-note">Cene su u dinarima. Doplata za 4 i 6 ruku ide na cenu samih usluga.</p>
+  </div>
+</section>
+
+<!-- ============ 4 I 6 RUKU ============ -->
+<section class="sec hands">
+  <div class="wrap hands-grid">
+    <div class="rv pending">
+      <span class="eyebrow on-dark">Tretmani u 4 i 6 ruku</span>
+      <h2 class="h2">Dve ili tri majstorice, <em>jedan termin</em></h2>
+      <p class="lead">Dok jedna radi nokte na rukama, druga radi stopala, a treća obrve. Ne čekaš da se jedna usluga završi da bi počela sledeća.</p>
+      <ul class="hands-list">
+        <li><b>Manikir i pedikir odjednom</b><span>+1800 RSD</span></li>
+        <li><b>Manikir i obrve odjednom</b><span>+1200 RSD</span></li>
+        <li><b>Pedikir i obrve odjednom</b><span>+600 RSD</span></li>
+        <li><b>Manikir, pedikir i obrve odjednom</b><span>+2000 RSD</span></li>
+      </ul>
+      <div class="btn-row" style="margin-top:40px;">
+        <a href="tel:+381628646377" class="btn btn-light">Zakaži tretman u 6 ruku</a>
+      </div>
+    </div>
+    <div class="hands-visual rv pending" aria-hidden="true">
+      <span class="orbit o1"></span>
+      <span class="orbit o2"></span>
+      <span class="orbit o3"></span>
+      <div class="orbit-dot d1"><i><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 13V5.6a1.6 1.6 0 0 1 3.2 0V12"/><path d="M11.7 11.6V4.4a1.6 1.6 0 0 1 3.2 0v8"/><path d="M14.9 12.6V7.4a1.6 1.6 0 0 1 3.2 0V15a6 6 0 0 1-6 6h-1.1a4 4 0 0 1-2.8-1.2l-3.3-3.3a1.6 1.6 0 0 1 2.3-2.3l2.3 2.2"/></svg></i></div>
+      <div class="orbit-dot d2"><i><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 21c-2-2.4-2.9-4.7-2.9-7 0-3.1 2.1-5.3 4.8-5.3 2.5 0 4.4 1.8 4.4 4.5 0 2.1-1.1 3.5-1.1 5.2 0 1 .3 1.9.8 2.6z"/><circle cx="16.4" cy="6.6" r="1.4"/><circle cx="18.6" cy="9.6" r="1.2"/></svg></i></div>
+      <div class="orbit-dot d3"><i><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8.4c2.2-1.9 4.5-2.9 7-2.9s4.8 1 7 2.9"/><path d="M3.6 15c2.8-2.6 5.6-3.9 8.4-3.9s5.6 1.3 8.4 3.9c-2.8 2.6-5.6 3.9-8.4 3.9S6.4 17.6 3.6 15z"/></svg></i></div>
+      <div class="hands-core">
+        <b>6</b>
+        <span>ruku odjednom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STERILIZACIJA ============ -->
+<section class="sec" id="higijena">
+  <div class="wrap clean-grid">
+    <div class="packet-stage rv pending">
+      <div class="packet" id="packet">
+        <div class="packet-body">
+          <div class="packet-tools" aria-hidden="true">
+            <svg viewBox="0 0 24 68" stroke-linecap="round" stroke-linejoin="round"><path d="M12 66V22"/><path d="M12 22l-5-8 5-12 5 12-5 8z"/></svg>
+            <svg viewBox="0 0 24 68" stroke-linecap="round" stroke-linejoin="round"><path d="M8 66V30M16 66V30"/><circle cx="8" cy="24" r="6"/><circle cx="16" cy="24" r="6"/></svg>
+            <svg viewBox="0 0 24 68" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="60" rx="5"/><path d="M12 12v44"/></svg>
+          </div>
+        </div>
+        <div class="packet-flap">
+          <span class="packet-seal">Sterilisano</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv pending">
+      <span class="eyebrow">Higijena</span>
+      <h2 class="h2">Paket se otvara <em>pred tobom</em></h2>
+      <p class="lead">Instrumenti idu u autoklav i zapakuju se u kraft paket. Taj paket cepamo tek kad sedneš u stolicu, da vidiš da pre tebe niko nije koristio isti alat.</p>
+      <div class="clean-points">
+        <div class="clean-point">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <b>Autoklav, ne samo dezinfekcija</b>
+            <span>Instrumenti prolaze kroz sterilizaciju parom pod pritiskom.</span>
+          </div>
+        </div>
+        <div class="clean-point">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
+          <div>
+            <b>Kraft paket po klijentu</b>
+            <span>Svaki set alata ima svoj paket i otvara se samo jednom.</span>
+          </div>
+        </div>
+        <div class="clean-point">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          <div>
+            <b>Bez žurbe između klijenata</b>
+            <span>Radno mesto se sprema iznova pre svakog termina.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCES ============ -->
+<section class="sec process">
+  <div class="wrap">
+    <div class="sec-head rv pending">
+      <div>
+        <span class="eyebrow">Kako ide</span>
+        <h2 class="h2">Od poziva do <em>gotovih noktiju</em></h2>
+      </div>
+      <p class="lead">Četiri koraka, bez formulara i bez čekanja da ti se neko javi sutra.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="step rv pending">
+        <div class="step-num">01</div>
+        <h3>Javiš se</h3>
+        <p>Pozoveš 062 864 6377 ili pišeš na WhatsApp, Viber i Telegram.</p>
+      </div>
+      <div class="step rv pending">
+        <div class="step-num">02</div>
+        <h3>Biramo termin</h3>
+        <p>Kažeš šta radiš i kad možeš, mi predložimo prvo slobodno vreme.</p>
+      </div>
+      <div class="step rv pending">
+        <div class="step-num">03</div>
+        <h3>Dolaziš na Kosovsku</h3>
+        <p>Kosovska 1, lokal 6, treći sprat. Paket sa alatom otvaramo pred tobom.</p>
+      </div>
+      <div class="step rv pending">
+        <div class="step-num">04</div>
+        <h3>Izlaziš sređena</h3>
+        <p>Sledeći termin zakazuješ na licu mesta, dok si još u stolici.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O NAMA ============ -->
+<section class="sec" id="o-nama">
+  <div class="wrap about-grid">
+    <div class="about-media rv pending">
+      <div class="ph">FOTOGRAFIJA PROSTORA SALONA</div>
+      <div class="about-badge">
+        <b>Yulia Knezevich</b>
+        <span>Beauty bar i škola, po ruskoj i srpskoj školi nege.</span>
+      </div>
+    </div>
+    <div class="about-text rv pending">
+      <span class="eyebrow">O nama</span>
+      <h2 class="h2">Salon u kom <em>se ne žuri</em></h2>
+      <p>Beauty Time vodi Yulia Knezevich. Radimo po ruskoj i srpskoj školi nege, a sve usluge držimo u istom prostoru na Kosovskoj 1.</p>
+      <p>Tvoj termin je tvoje vreme. Niko te ne požuruje da oslobodiš stolicu i niko ti ne prodaje tretman koji nisi tražila.</p>
+      <ul class="about-check">
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          <span>Beauty bar i škola</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          <span>Centar grada, Kosovska 1</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          <span>Radimo i muške usluge</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          <span>Otvoreno svaki dan u godini</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PITANJA ============ -->
+<section class="sec" id="pitanja">
+  <div class="wrap faq-grid">
+    <div class="rv pending">
+      <span class="eyebrow">Pitanja</span>
+      <h2 class="h2">Ono što nas <em>najčešće pitate</em></h2>
+      <p class="lead">Ako ovde nema tvog pitanja, pozovi nas i odgovorimo odmah.</p>
+    </div>
+    <div class="faq-list rv pending">
+      <details class="faq-item">
+        <summary>Kako zakazujem termin<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Pozoveš 062 864 6377 ili pišeš na WhatsApp, Viber ili Telegram na isti broj. Kažeš šta ti treba i dogovaramo prvo slobodno vreme.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Šta znači tretman u 4 i 6 ruku<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Znači da na tebi radi više majstorica istovremeno. Manikir i pedikir odjednom nose doplatu od 1800 dinara, a manikir, pedikir i obrve zajedno 2000 dinara.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kako sterilišete instrumente<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Instrumenti idu u autoklav i pakuju se u kraft paket. Paket otvaramo pred tobom, na početku tvog termina.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Radite li vikendom<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Radimo svaki dan, od 09:00 do 20:00, uključujući subotu i nedelju.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Gde se tačno nalazite<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Kosovska 1, lokal 6 na trećem spratu, u centru Beograda. Kad stigneš, javi se na interfon ili nas pozovi.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Radite li i sa muškarcima<span class="faq-sign"></span></summary>
+        <p class="faq-answer">Radimo. Muški manikir je 3500 dinara, smart pedikir za muškarce 5000, a muško šišanje 3500 dinara.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="sec contact" id="kontakt">
+  <div class="wrap">
+    <div class="contact-card rv pending">
       <div class="contact-left">
-        <span class="section-tag">Zakaži termin</span>
-        <h2>Rezerviši svoje mesto u Beauty Time-u</h2>
-        <p>Pozovi salon, pošalji poruku na WhatsApp ili javi se mejlom. Odgovaramo isti dan i pronalazimo termin koji ti odgovara.</p>
+        <span class="eyebrow on-dark">Zakazivanje</span>
+        <h2>Uzmi svoj termin za ovu nedelju</h2>
+        <p>Pozovi ili pošalji poruku sa uslugom koja ti treba i danom koji ti odgovara. Javljamo se sa slobodnim terminima.</p>
         <div class="btn-row">
-          <a href="tel:+381601234567" class="btn btn-light">Pozovi salon</a>
-          <a href="https://wa.me/381601234567" class="btn btn-outline" style="border-color:#fff;color:#fff;">Piši na WhatsApp</a>
+          <a href="tel:+381628646377" class="btn btn-light">Pozovi 062 864 6377</a>
+          <a href="https://wa.me/381628646377" class="btn btn-outline-light" target="_blank" rel="noopener">Piši na WhatsApp</a>
         </div>
       </div>
       <div class="contact-right">
         <div class="info-row">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </div>
+          <span class="info-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
           <div>
-            <h4>Adresa</h4>
-            <p>Kosovska 1, Beograd - centar grada</p>
+            <b>Adresa</b>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kosovska+1,+Beograd" target="_blank" rel="noopener">Kosovska 1, lokal 6, sprat 3</a>
           </div>
         </div>
         <div class="info-row">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
+          <span class="info-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></span>
           <div>
-            <h4>Radno vreme</h4>
-            <p>Svaki dan, 09:00 - 20:00</p>
+            <b>Telefon, WhatsApp, Viber</b>
+            <a href="tel:+381628646377">+381 62 864 6377</a>
           </div>
         </div>
         <div class="info-row">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4V5z"/><path d="M4 6l8 7 8-7"/></svg>
-          </div>
+          <span class="info-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg></span>
           <div>
-            <h4>Email</h4>
-            <a href="mailto:info@beautytimebar.com">info@beautytimebar.com</a>
+            <b>Email</b>
+            <a href="mailto:beautytimebelgrade@gmail.com">beautytimebelgrade@gmail.com</a>
           </div>
         </div>
         <div class="info-row">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
-          </div>
+          <span class="info-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
           <div>
-            <h4>Telefon</h4>
-            <a href="tel:+381601234567">+381 60 123 4567</a>
+            <b>Radno vreme</b>
+            <span>Svaki dan, 09:00 - 20:00</span>
           </div>
         </div>
       </div>
@@ -799,58 +2069,200 @@
   </div>
 </section>
 
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap footer-inner">
-    <img src="assets/logo_new_small_white.png" alt="Beauty Time logo, bela verzija">
-    <div class="footer-links">
-      <a href="#usluge">Usluge</a>
-      <a href="#o-nama">O nama</a>
-      <a href="#kontakt">Kontakt</a>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <img src="assets/logo.png" alt="Beauty Time logo">
+        <p>Beauty bar u centru Beograda. Manikir, pedikir, obrve, frizer i masaža, uz tretmane u 4 i 6 ruku.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sajt</h4>
+        <ul>
+          <li><a href="#usluge">Usluge</a></li>
+          <li><a href="#cenovnik">Cenovnik</a></li>
+          <li><a href="#higijena">Sterilizacija</a></li>
+          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#pitanja">Pitanja</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+381628646377">+381 62 864 6377</a></li>
+          <li><a href="mailto:beautytimebelgrade@gmail.com">beautytimebelgrade@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Kosovska+1,+Beograd" target="_blank" rel="noopener">Kosovska 1, lokal 6, sprat 3</a></li>
+          <li><a href="https://www.instagram.com/beautytime_belgrade/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/BeautyTimeBar.belgrade" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
     </div>
-    <p>&copy; 2026 Beauty Time. Kosovska 1, Beograd.</p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Beauty Time. Sva prava zadržana.</span>
+      <span>Svaki dan 09:00 - 20:00</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Sticky header blur efekat
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  root.classList.add('js');
 
-  // Hamburger meni
-  const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burgerBtn.addEventListener('click', () => {
-    burgerBtn.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var reduced = mq ? mq.matches : false;
+  var isTouch = function (e) { return e.pointerType === 'touch'; };
+
+  /* ---- sticky header ---- */
+  var header = document.getElementById('site-header');
+  var onScroll = function () {
+    header.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---- hamburger ---- */
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      burgerBtn.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  Array.prototype.forEach.call(document.querySelectorAll('.m-link'), function (link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
   });
 
-  // Scroll reveal - sadržaj je uvek vidljiv, JS samo dodaje suptilnu animaciju
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ---- scroll reveal: sadrzaj je vidljiv i bez JS-a, ovde ide samo pomeraj ---- */
+  var revealEls = document.querySelectorAll('.rv');
+  var viewEls = document.querySelectorAll('.packet-stage, #steps');
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
           entry.target.classList.remove('pending');
+          entry.target.classList.add('shown');
+          revealObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    Array.prototype.forEach.call(revealEls, function (el, i) {
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      revealObs.observe(el);
+    });
+
+    var viewObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          viewObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    Array.prototype.forEach.call(viewEls, function (el) { viewObs.observe(el); });
   } else {
-    revealEls.forEach(el => el.classList.remove('pending'));
+    Array.prototype.forEach.call(revealEls, function (el) { el.classList.remove('pending'); });
+    Array.prototype.forEach.call(viewEls, function (el) { el.classList.add('in-view'); });
   }
+
+  /* ---- cenovnik: tabovi (bez JS-a su svi paneli vidljivi) ---- */
+  var tabs = document.querySelectorAll('.price-tab');
+  var showPanel = function (activeTab) {
+    Array.prototype.forEach.call(tabs, function (t) {
+      var selected = t === activeTab;
+      t.setAttribute('aria-selected', selected ? 'true' : 'false');
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) { panel.hidden = !selected; }
+    });
+  };
+  if (tabs.length) { showPanel(tabs[0]); }
+  Array.prototype.forEach.call(tabs, function (tab) {
+    tab.addEventListener('click', function () {
+      showPanel(tab);
+    });
+  });
+
+  /* ---- status radnog vremena ---- */
+  var label = document.getElementById('statusLabel');
+  var hours = document.getElementById('statusHours');
+  if (label && hours) {
+    var now = new Date();
+    var h = now.getHours();
+    if (h >= 9 && h < 20) {
+      label.textContent = 'Otvoreno sada';
+      hours.textContent = 'Radimo do 20:00';
+    } else {
+      label.textContent = 'Trenutno zatvoreno';
+      hours.textContent = 'Otvaramo u 09:00';
+    }
+  }
+
+  /* ---- 3D nagib kartica sa uslugama (mis, ne dodir) ---- */
+  if (!reduced) {
+    Array.prototype.forEach.call(document.querySelectorAll('.svc'), function (card) {
+      var frame = null;
+      card.addEventListener('pointermove', function (e) {
+        if (isTouch(e)) { return; }
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        if (frame) { return; }
+        frame = requestAnimationFrame(function () {
+          frame = null;
+          card.style.setProperty('--mx', (px * 100) + '%');
+          card.style.setProperty('--my', (py * 100) + '%');
+          card.style.transform =
+            'perspective(900px) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) rotateY(' +
+            ((px - 0.5) * 8).toFixed(2) + 'deg) translateY(-6px)';
+        });
+      });
+      card.addEventListener('pointerenter', function (e) {
+        if (isTouch(e)) { return; }
+        card.classList.add('is-tilt');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.classList.remove('is-tilt');
+        card.style.transform = '';
+      });
+    });
+
+    /* ---- hero: bocica laka i luk prate kursor ---- */
+    var media = document.getElementById('heroMedia');
+    var arch = document.getElementById('heroArch');
+    var rotor = document.getElementById('polishRotor');
+    if (media && arch && rotor) {
+      var ticking = false;
+      media.addEventListener('pointermove', function (e) {
+        if (isTouch(e) || ticking) { return; }
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          var r = media.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width - 0.5;
+          var py = (e.clientY - r.top) / r.height - 0.5;
+          arch.style.setProperty('--tilt-y', (px * 6).toFixed(2) + 'deg');
+          arch.style.setProperty('--tilt-x', (-py * 4).toFixed(2) + 'deg');
+          rotor.style.setProperty('--pr-y', (-10 + px * 26).toFixed(2) + 'deg');
+          rotor.style.setProperty('--pr-x', (-4 - py * 8).toFixed(2) + 'deg');
+        });
+      });
+      media.addEventListener('pointerleave', function () {
+        arch.style.setProperty('--tilt-y', '0deg');
+        arch.style.setProperty('--tilt-x', '0deg');
+        rotor.style.setProperty('--pr-y', '-10deg');
+        rotor.style.setProperty('--pr-x', '-4deg');
+      });
+    }
+  }
+})();
 </script>
 
 </body>
